@@ -1,0 +1,14 @@
+[Unit]
+Description = Cobitis Aquarium Monitor - Web Service
+
+[Service]
+Environment="NODE_ENV=production"
+ExecStart = /usr/local/bin/node /opt/cobitis-web/build/main.js
+WorkingDirectory = /opt/cobitis-web/
+Restart = always
+Type = simple
+User = root
+Group = root
+
+[Install]
+WantedBy = multi-user.target

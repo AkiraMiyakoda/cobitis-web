@@ -1,0 +1,64 @@
+extends layout
+
+block header
+    script(defer, src="https://cdn.jsdelivr.net/npm/strftime@0.10.1/strftime.min.js")
+    script(defer, src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js")
+    script(defer, type="module", src="/js/index.min.js")
+
+block contents
+    .background#background
+        .value-box#temp-box
+            .chart-box
+                canvas
+            .value
+            .unit &deg;C
+
+        .value-box#tds-box
+            .chart-box
+                canvas
+            .value
+            .unit ppm
+
+        nav.top-nav.shadow-1
+            span.nav-button#button-menu
+            span.nav-label#current-sensor
+
+        aside
+            nav.drawer.shadow-1
+                .accordion
+                    input#toggle-ranges(type="checkbox")
+                    label(for="toggle-ranges") グラフ期間
+                    ul#list-ranges
+
+                .accordion
+                    input#toggle-sensors(type="checkbox")
+                    label(for="toggle-sensors") センサー
+                    ul#list-sensors
+
+                .accordion
+                    input#toggle-settings(type="checkbox")
+                    label(for="toggle-settings") 設定
+                    ul#list-settings
+                        li#item-signout ログアウト
+            .drawer-backdrop
+
+    dialog#dialog-sensor
+        article
+            header
+                h4 センサー情報の更新
+
+            label(for="sensor-description") センサーの説明
+            input#sensor-description(type="text", placeholder="センサーの説明")
+            footer
+                button.execute-dialog 更新する
+                button.secondary.cancel-dialog やめる
+
+    .snackbar#snackbar ああああああ
+
+
+    .overlay.active
+        .circle-box
+            svg(viewBox="25 25 50 50")
+                circle(cx="50", cy="50", r="20", fill="none", stroke="currentColor", stroke-width="3")
+
+    script const API_V1 = !{JSON.stringify(api_v1)};

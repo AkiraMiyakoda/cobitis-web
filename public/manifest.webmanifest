@@ -1,0 +1,33 @@
+{
+    "theme_color": "#2e86c1",
+    "background_color": "#AED6F1",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "https://cobitis.net/",
+    "name": "Cobitis",
+    "short_name": "Cobitis",
+    "description": "Cobitis - Aquarium Tank Monitor",
+    "icons": [
+        {
+            "src": "/img/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
