@@ -27,6 +27,7 @@ app.use(
         useDefaults: true,
         directives: {
             "script-src": ["'self'", "'unsafe-inline'", "cdn.jsdelivr.net", "cdnjs.cloudflare.com"],
+            "style-src": ["'self'", "'unsafe-inline'", "cdn.jsdelivr.net", "fonts.googleapis.com"],
         },
     })
 );
